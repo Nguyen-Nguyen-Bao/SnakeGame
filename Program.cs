@@ -402,7 +402,7 @@ class Program
         input = Console.ReadLine();
         if (input.Contains("q") || input.Contains("Q"))
         {
-            Environment.Exit(1);
+            Environment.Exit(0);
         }
     }
 }
