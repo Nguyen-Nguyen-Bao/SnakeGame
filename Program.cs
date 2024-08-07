@@ -21,7 +21,7 @@ class Program
     static int speed = 500;
     static int point = 0;
     static bool gameover = false;
-    static string path = @"C:\NguyenBao\C#\New folder\SnakeGame";
+    static string path = @"C:\NguyenBao\C#\Case study C#\SnakeGame";
     static string accountsfile = "UserName.txt";
     static string passwordsfile = "PassWord.txt";
     static string scoreshistoryfile = "HighScoreHistory.txt";
@@ -421,7 +421,7 @@ class Program
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.Write("Time: ");
             Console.ResetColor();
-            Console.Write($"{stopwatch}");
+            Console.WriteLine($"{stopwatch}");
         }
         else if (gameover)
         {
@@ -747,86 +747,110 @@ class Program
             string[] playerdatetimess = new string[0];
             string[] playerInfo = new string[6];
             int u = 0;
-            FileStream frh = new FileStream(Path.Combine(path, scoresfile), FileMode.Open);
-            using (StreamReader readH = new StreamReader(frh))
+            FileStream frN = new FileStream(Path.Combine(path, accountsfile), FileMode.Open);
+            using (StreamReader reaN = new StreamReader(frN))
             {
                 string line;
-                while ((line = readH.ReadLine()) != null)
+                while ((line = reaN.ReadLine()) != null)
                 {
-                    playerInfo = line.Split(" ");
-                    if (playerInfo[0] == playername)
+                    if (line == playername)
                     {
-                        Array.Resize(ref playerpoints, playerpoints.Length + 1);
-                        Array.Resize(ref playertimespans, playertimespans.Length + 1);
-                        Array.Resize(ref playerdatetimesd, playerdatetimesd.Length + 1);
-                        Array.Resize(ref playerdatetimess, playerdatetimess.Length + 1);
-                        playerpoints[u] = playerInfo[1];
-                        playertimespans[u] = playerInfo[2];
-                        playerdatetimesd[u] = playerInfo[3];
-                        playerdatetimess[u] = playerInfo[4];
-                        ++u;
+                        doNameExist = true;
+                        break;
                     }
                 }
             }
-            int[] playerpoints2 = Array.ConvertAll(playerpoints, int.Parse);
-            double[] playertimespans2 = Array.ConvertAll(playertimespans, double.Parse);
-            DateTime[] playerdatetimesd2 = Array.ConvertAll(playerdatetimesd, DateTime.Parse);
-            DateTime[] playerdatetimess2 = Array.ConvertAll(playerdatetimess, DateTime.Parse);
-            int[] playerpointsort = new int[playerpoints.Length];
-            double[] playertimespansort = new double[playertimespans.Length];
-            DateTime[] playerdatetimesdsort = new DateTime[playerdatetimesd.Length];
-            DateTime[] playerdatetimesssort = new DateTime[playerdatetimess.Length];
-            int rank = 0;
-            for (int i = 0; i < playerpoints.Length; ++i)
+            if (doNameExist)
             {
-                for (int j = 0; j < playerpoints.Length; ++j)
+                FileStream frh = new FileStream(Path.Combine(path, scoresfile), FileMode.Open);
+                using (StreamReader readH = new StreamReader(frh))
                 {
-                    if (playerpoints2[i] < playerpoints2[j])
+                    string line;
+                    while ((line = readH.ReadLine()) != null)
                     {
-                        ++rank;
-                    }
-                    else if (playerpoints2[i] == playerpoints2[j])
-                    {
-                        if (playertimespans2[i] > playertimespans2[j])
+                        playerInfo = line.Split(" ");
+                        if (playerInfo[0] == playername)
                         {
-                            ++rank;
+                            Array.Resize(ref playerpoints, playerpoints.Length + 1);
+                            Array.Resize(ref playertimespans, playertimespans.Length + 1);
+                            Array.Resize(ref playerdatetimesd, playerdatetimesd.Length + 1);
+                            Array.Resize(ref playerdatetimess, playerdatetimess.Length + 1);
+                            playerpoints[u] = playerInfo[1];
+                            playertimespans[u] = playerInfo[2];
+                            playerdatetimesd[u] = playerInfo[3];
+                            playerdatetimess[u] = playerInfo[4];
+                            ++u;
                         }
                     }
                 }
-                playerpointsort[rank] = playerpoints2[i];
-                playertimespansort[rank] = playertimespans2[i];
-                playerdatetimesdsort[rank] = playerdatetimesd2[i];
-                playerdatetimesssort[rank] = playerdatetimess2[i];
-                rank = 0;
-            }
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("BẢNG XẾP HẠNG THÀNH TÍCH CÁ NHÂN");
-            Console.WriteLine("--------------------------------");
-            Console.ResetColor();
-            Console.WriteLine();
-            Console.WriteLine($"CỦA NGƯỜI CHƠI {playername}");
-            for (int i = 0; i < playerpoints.Length; ++i)
-            {
+                int[] playerpoints2 = Array.ConvertAll(playerpoints, int.Parse);
+                double[] playertimespans2 = Array.ConvertAll(playertimespans, double.Parse);
+                DateTime[] playerdatetimesd2 = Array.ConvertAll(playerdatetimesd, DateTime.Parse);
+                DateTime[] playerdatetimess2 = Array.ConvertAll(playerdatetimess, DateTime.Parse);
+                int[] playerpointsort = new int[playerpoints.Length];
+                double[] playertimespansort = new double[playertimespans.Length];
+                DateTime[] playerdatetimesdsort = new DateTime[playerdatetimesd.Length];
+                DateTime[] playerdatetimesssort = new DateTime[playerdatetimess.Length];
+                int rank = 0;
+                for (int i = 0; i < playerpoints.Length; ++i)
+                {
+                    for (int j = 0; j < playerpoints.Length; ++j)
+                    {
+                        if (playerpoints2[i] < playerpoints2[j])
+                        {
+                            ++rank;
+                        }
+                        else if (playerpoints2[i] == playerpoints2[j])
+                        {
+                            if (playertimespans2[i] > playertimespans2[j])
+                            {
+                                ++rank;
+                            }
+                        }
+                    }
+                    playerpointsort[rank] = playerpoints2[i];
+                    playertimespansort[rank] = playertimespans2[i];
+                    playerdatetimesdsort[rank] = playerdatetimesd2[i];
+                    playerdatetimesssort[rank] = playerdatetimess2[i];
+                    rank = 0;
+                }
+                Console.WriteLine();
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write($"RANK ");
-                Console.Write($"{i + 1}: \t");
+                Console.WriteLine("BẢNG XẾP HẠNG THÀNH TÍCH CÁ NHÂN");
+                Console.WriteLine("--------------------------------");
                 Console.ResetColor();
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Write($"score: ");
-                Console.ResetColor();
-                Console.Write($"{playerpointsort[i]}\t");
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Write($"timespan: ");
-                Console.ResetColor();
-                Console.Write($"{playertimespansort[i]}\t");
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.Write($"datetime:");
-                Console.ResetColor();
-                Console.Write($"{playerdatetimesdsort[i]} {playerdatetimesssort[i]}");
+                Console.WriteLine();
+                Console.WriteLine($"CỦA NGƯỜI CHƠI {playername}");
+                for (int i = 0; i < playerpoints.Length; ++i)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write($"RANK ");
+                    Console.Write($"{i + 1}: \t");
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.Write($"score: ");
+                    Console.ResetColor();
+                    Console.Write($"{playerpointsort[i]}\t");
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.Write($"timespan: ");
+                    Console.ResetColor();
+                    Console.Write($"{playertimespansort[i]}\t");
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.Write($"datetime:");
+                    Console.ResetColor();
+                    Console.WriteLine($"{playerdatetimesdsort[i]} {playerdatetimesssort[i]}");
+                }
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                doNameExist = false;
             }
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("This player DO NOT exist!");
+                Console.ResetColor();
+            }
 
         }
         else if (input.Contains("r") || input.Contains("R"))
