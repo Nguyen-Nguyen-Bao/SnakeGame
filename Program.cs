@@ -21,7 +21,7 @@ class Program
     static int speed = 500;
     static int point = 0;
     static bool gameover = false;
-    static string path = @"C:\NguyenBao\C#\Test\SnakeGame";
+    static string path = @"C:\NguyenBao\C#\New folder\SnakeGame";
     static string accountsfile = "UserName.txt";
     static string passwordsfile = "PassWord.txt";
     static string scoreshistoryfile = "HighScoreHistory.txt";
@@ -64,6 +64,7 @@ class Program
                 Console.Clear();
                 Console.WriteLine("Your Name Is Hidden Away!!!");
             }
+            stopwatch.Start();
             SetupBroad();
             GiveDircetion();
             SpawnSnake_1st();
@@ -136,7 +137,6 @@ class Program
     }
     static void DrawBroad()
     {
-        stopwatch.Start();
         for (int i = 0; i < rows; ++i)
         {
             for (int j = 0; j < cols; ++j)
@@ -167,13 +167,9 @@ class Program
                 }
                 else
                     Console.Write(broad[i, j]);
-            } 
+            }
             Console.WriteLine();
         }
-        Console.ForegroundColor = ConsoleColor.DarkGreen;
-        Console.Write("Time: ");
-        Console.ResetColor();
-        Console.Write($"{stopwatch}");
     }
     static void GiveDircetion()
     {
@@ -419,14 +415,23 @@ class Program
         if (!gameover)
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine($"Score: {point}");
+            Console.Write($"Score:");
             Console.ResetColor();
+            Console.WriteLine($" {point}");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("Time: ");
+            Console.ResetColor();
+            Console.Write($"{stopwatch}");
         }
         else if (gameover)
         {
             stopwatch.Stop();
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine($"Your score: {point}!!!");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.Write("Your Time: ");
+            Console.WriteLine($"{stopwatch}!!!");
             Console.ResetColor();
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine($"GAME OVER!!!");
@@ -462,10 +467,14 @@ class Program
         Console.Write($"Quit");
         Console.ResetColor();
         Console.WriteLine($"!!!");
-        Console.Write("AND ALSO Press u or U for ");
-        Console.Write("Sign Up ");
-        Console.Write("and Press i or I for ");
-        Console.Write("Sign In");
+        Console.Write("AND ALSO!!! Press u or U for ");
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.Write("SIGN UP");
+        Console.ResetColor();
+        Console.Write("!!! and Press i or I for ");
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.Write("SIGN IN");
+        Console.ResetColor();
         Console.WriteLine("!!!");
         input = Console.ReadLine();
         if (input.Contains("q") || input.Contains("Q"))
@@ -507,7 +516,7 @@ class Program
     }
     static string SignUp()
     {
-        Console.Clear();
+        // Console.Clear();
         FileStream frN = new FileStream(Path.Combine(path, accountsfile), FileMode.Open);
         Console.ForegroundColor = ConsoleColor.Blue;
         Console.WriteLine("BẠN ĐANG ĐĂNG KÝ TÀI KHOẢN:");
@@ -659,15 +668,29 @@ class Program
         Console.WriteLine("MENU");
         Console.WriteLine("--------------------------------");
         Console.ResetColor();
+        Console.Write("Press h or H to see ");
         Console.ForegroundColor = ConsoleColor.DarkGreen;
-        Console.WriteLine("Press h or H to see Play History");
-        Console.WriteLine("Press n or N to see Player list");
-        Console.WriteLine("Press p or P to see Player's Records");
-        Console.WriteLine("Press r or R to see All Records");
-        Console.WriteLine("Dont press anything and back to MENU");
+        Console.WriteLine("Play History");
+        Console.ResetColor();
+        Console.Write("Press n or N to see ");
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
+        Console.WriteLine("Player list");
+        Console.ResetColor();
+        Console.Write("Press p or P to see ");
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
+        Console.WriteLine("Personal Records");
+        Console.ResetColor();
+        Console.Write("Press r or R to see ");
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
+        Console.WriteLine("All Records");
+        Console.ResetColor();
+        Console.Write("Dont press anything and back to ");
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
+        Console.WriteLine("MENU");
+        Console.ResetColor();
         Console.ResetColor();
         input = Console.ReadLine();
-        Console.WriteLine($"Bạn đã nhập: {input}");
+        Console.WriteLine($"Entered: {input}");
         if (input.Contains("h") || input.Contains("H"))
         {
             Console.ForegroundColor = ConsoleColor.Blue;
