@@ -1,0 +1,57 @@
+Player:NameIsHidden!!!           Score:3	Time:0(m)	7(s) 172(ms)	DateTime:8/6/2024 5:26:47 PM
+
+Player:NameIsHidden!!!           Score:5	Time:0(m)	9(s) 702(ms)	DateTime:8/6/2024 5:26:59 PM
+
+Player:NameIsHidden!!!           Score:3	Time:0(m)	5(s) 630(ms)	DateTime:8/6/2024 5:46:49 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	6(s) 630(ms)	DateTime:8/6/2024 5:47:46 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	4(s) 560(ms)	DateTime:8/6/2024 5:47:57 PM
+
+Player:NameIsHidden!!!           Score:3	Time:0(m)	6(s) 678(ms)	DateTime:8/6/2024 5:49:14 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	5(s) 638(ms)	DateTime:8/6/2024 5:52:50 PM
+
+Player:NameIsHidden!!!           Score:3	Time:0(m)	6(s) 668(ms)	DateTime:8/6/2024 5:54:01 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	5(s) 578(ms)	DateTime:8/6/2024 5:54:14 PM
+
+Player:NameIsHidden!!!           Score:3	Time:0(m)	7(s) 650(ms)	DateTime:8/6/2024 5:55:16 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	6(s) 621(ms)	DateTime:8/6/2024 5:57:14 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	4(s) 635(ms)	DateTime:8/6/2024 5:58:17 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	5(s) 76(ms)	DateTime:8/6/2024 5:59:06 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	4(s) 59(ms)	DateTime:8/6/2024 6:00:36 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	6(s) 632(ms)	DateTime:8/6/2024 6:02:00 PM
+
+Player:NameIsHidden!!!           Score:1	Time:0(m)	3(s) 65(ms)	DateTime:8/6/2024 6:03:38 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	5(s) 105(ms)	DateTime:8/6/2024 6:03:58 PM
+
+Player:NameIsHidden!!!           Score:3	Time:0(m)	6(s) 167(ms)	DateTime:8/6/2024 6:05:31 PM
+
+Player:NameIsHidden!!!           Score:3	Time:0(m)	5(s) 604(ms)	DateTime:8/6/2024 6:06:29 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	5(s) 629(ms)	DateTime:8/6/2024 6:22:46 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	2(s) 554(ms)	DateTime:8/6/2024 6:23:33 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	6(s) 121(ms)	DateTime:8/6/2024 6:25:56 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	8(s) 151(ms)	DateTime:8/6/2024 6:26:23 PM
+
+Player:NameIsHidden!!!           Score:3	Time:0(m)	7(s) 122(ms)	DateTime:8/6/2024 6:28:54 PM
+
+Player:NameIsHidden!!!           Score:2	Time:0(m)	6(s) 123(ms)	DateTime:8/6/2024 6:30:30 PM
+
+Player:NameIsHidden!!!           Score:3	Time:0(m)	11(s) 943(ms)	DateTime:8/6/2024 7:55:37 PM
+Player:NameIsHidden!!!           Score:2	Time:0(m)	8(s) 258(ms)	DateTime:8/6/2024 7:57:12 PM
+Player:NameIsHidden!!!           Score:4	Time:0(m)	13(s) 409(ms)	DateTime:8/6/2024 7:57:44 PM
+Player:NameIsHidden!!!           Score:17	Time:0(m)	34(s) 137(ms)	DateTime:8/6/2024 7:58:05 PM
+Player:NameIsHidden!!!           Score:2	Time:0(m)	4(s) 677(ms)	DateTime:8/6/2024 7:59:53 PM
+Player:NameIsHidden!!!           Score:2	Time:0(m)	7(s) 803(ms)	DateTime:8/6/2024 8:03:17 PM
+Player:NameIsHidden!!!           Score:5	Time:0(m)	13(s) 894(ms)	DateTime:8/7/2024 9:25:11 AM
